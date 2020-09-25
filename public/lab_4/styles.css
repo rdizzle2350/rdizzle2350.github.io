@@ -1,7 +1,7 @@
 /*CSS*/
 
 body {
-  background: #eeeeee;
+  background: rgba(56, 149, 168,0.8);
   font-family: Arial, Helvetica, sans-serif;
   margin-right: auto;
   line-height: 1.5;
@@ -97,3 +97,25 @@ label {
   display: block;
   margin: 5px;
 }
+
+
+
+.flex-outer li,
+.flex-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: stretch;
+  
+}
+
+.flex-inner {
+  /*padding: 0 8px;*/
+  justify-content: space-between;
+  align-items: baseline;
+  align-content: flex-start;
+}
+
+
+
+

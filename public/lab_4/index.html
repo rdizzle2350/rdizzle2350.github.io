@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name = "author" content="Rishi Sudhakar">
+        <link href="styles.css" rel="stylesheet">
+        <title>Rishi Sudhakar's Lab 4</title>
+    </head>
+    
+    <body>
+        <div class="wrapper">
+            <div class="container">
+
+                <div class="header">
+                    <h1>Rishi Sudhakar's Lab 4</h1>
+                </div>
+                <form action="/api" method="post">
+                    <ul class="flex-outer">
+                        <li class="flex-inner">
+                            <label for="first-name">First Name</label>
+                            <input type="text" name="first-name" id="first-name" 
+                                placeholder="Enter first name here" maxlength="140">
+                        </li>
+
+                        <li class="flex-inner">
+                            <label for="last-name">Last Name</label>
+                            <input type="text" name="last-name" id="last-name" placeholder="Enter last name here"
+                                 maxlength="140">
+                        </li>
+
+                        <li class="flex-inner">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" placeholder="Enter email address here">
+                        </li>
+
+                        <li class="flex-inner">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" name="phone" id="phone" placeholder="Enter phone number here">
+                        </li>
+
+                        <li class="flex-inner">
+                            <label for="message">Message</label>
+                            <textarea rows="5" cols="33" name="message" id="message" placeholder="Enter a message here"></textarea>
+                        </li>
+
+                        <li>
+                            <label class="flex-inner">Age</label>
+                            <ul class="flex-inner">
+                                <li class="flex-inner">
+                                    <input type="checkbox" name="twentynine-to-thirtyfive" id="twentynine-to-thirtyfive">
+                                    <label for="twentynine-to-thirtyfive">29-35</label>
+                                </li>
+                                <li class="flex-inner">
+                                    <input type="checkbox" name="thirtyfive-to-fifty" id="thirtyfive-to-fifty">
+                                    <label for="thirtyfive-to-fifty">35-50</label>
+                                </li>
+                                <li class="flex-inner">
+                                    <input type="checkbox" name="fifty-to-sixtyfive" id="fifty-to-sixtyfive">
+                                    <label for="fifty-to-sixtyfive">50-65</label>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <button type="submit" name="button">Submit</button>
+                        </li>
+                    </ul>
+                </form> 
+            </div>
+        </div>
+    </body>
+</html>
