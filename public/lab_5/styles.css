@@ -73,7 +73,9 @@ h3 {
   background-color: #ffc477;
   border: 2px solid #ca8611;
   border-radius: 11px;
+  padding: 6px 12px;
   margin-right: 10px;
+
   display: inline-block;
   cursor: pointer;
   font-family: Verdana;
@@ -99,8 +101,6 @@ label {
   margin: 5px;
 }
 
-
-
 .flex-outer li,
 .flex-inner {
   display: flex;
@@ -111,7 +111,7 @@ label {
 }
 
 .flex-inner {
-  /*padding: 0 8px;*/
+  padding: 8px;
   justify-content: space-between;
   align-items: baseline;
   align-content: flex-start;

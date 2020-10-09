@@ -62,8 +62,8 @@
                         </li>
 
                         <li>
-                            <button type="submit" id="button" name="button">Submit</button>
-                            <button type="button" id="button2" name="button2" onclick="testfunction()">Activate</button>
+                            <button type="submit" class="button" id="button" name="button">Submit</button>
+                            <button type="button" class="button" id="act_button" name="act_button" onclick="testfunction()">Activate</button>
                         </li>
                     </ul>
                 </form> 
@@ -74,7 +74,13 @@
                 fetch('/api')
                 .then((response) => response.text())
                 .then((response) => {
-                    console.log(response);
+                    const fruits = ['apple','mango','grape'];
+                    const checks = document.querySelectorAll('.flex-inner label')
+                    console.log(checks.length, checks[0]);
+                    checks.forEach(((check, i) => {
+                        console.log(check,i);
+                        check.innerText = fruits[i];
+                    }))
                 }) 
             }
        </script>
