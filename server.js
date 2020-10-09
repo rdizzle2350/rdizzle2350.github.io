@@ -13,7 +13,7 @@ app.use(express.static('public'));
 app.route('/api')
   .get((req, res) => {
     console.log('GET request detected');
-    res.send('Lab 5 for ${process.end.NAME}');
+    res.send(`Lab 5 for ${process.end.NAME}`);
   })
   .post((req, res) => {
     console.log('POST request detected');
