@@ -10,60 +10,38 @@
     <body>
         <div class="wrapper">
             <div class="container">
-
                 <div class="header">
                     <h1>Rishi Sudhakar's Lab 4</h1>
                 </div>
                 <form action="/api" method="post">
                     <ul class="flex-outer">
-                        <li class="flex-inner">
-                            <label for="first-name">First Name</label>
-                            <input type="text" name="first-name" id="first-name" 
-                                placeholder="Enter first name here" maxlength="140">
-                        </li>
-
-                        <li class="flex-inner">
-                            <label for="last-name">Last Name</label>
-                            <input type="text" name="last-name" id="last-name" placeholder="Enter last name here"
-                                 maxlength="140">
-                        </li>
-
-                        <li class="flex-inner">
-                            <label for="email">Email</label>
-                            <input type="email" name="email" id="email" placeholder="Enter email address here">
-                        </li>
-
-                        <li class="flex-inner">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" name="phone" id="phone" placeholder="Enter phone number here">
-                        </li>
-
-                        <li class="flex-inner">
-                            <label for="message">Message</label>
-                            <textarea rows="5" cols="33" name="message" id="message" placeholder="Enter a message here"></textarea>
-                        </li>
-
+                        <li><label for="fname">First Name</label>
+                            <input type="text" name="first-name" id="fname" placeholder="Enter first name here" maxlength="140"></li>
+                        <li><label for="lname">Last Name</label>
+                            <input type="text" name="last-name" id="lname" placeholder="Enter last name here" maxlength="140"></li>
+                        <li><label for="email">Email</label>
+                            <input type="email" name="email" id="email" placeholder="Enter email address here"></li>
+                        <li><label for="phone">Phone Number</label>
+                            <input type="tel" name="phone" id="phone" placeholder="Enter phone number here"></li>
+                        <li><label for="message">Text Field</label>
+                            <textarea rows="5" cols="33" name="message" id="message" placeholder="Enter a message here"></textarea></li>
                         <li>
-                            <label class="checkbox-list-label">Age</label>
+                            <p class="checkbox-list-label">
+                                Age
+                            </p>
                             <ul class="flex-inner">
-                                <li class="flex-inner">
-                                    <input type="checkbox" name="twentynine-to-thirtyfive" id="twentynine-to-thirtyfive">
-                                    <label for="twentynine-to-thirtyfive">29-35</label>
-                                </li>
-                                <li class="flex-inner">
-                                    <input type="checkbox" name="thirtyfive-to-fifty" id="thirtyfive-to-fifty">
-                                    <label for="thirtyfive-to-fifty">35-50</label>
-                                </li>
-                                <li class="flex-inner">
-                                    <input type="checkbox" name="fifty-to-sixtyfive" id="fifty-to-sixtyfive">
-                                    <label for="fifty-to-sixtyfive">50-65</label>
-                                </li>
+                                <li><input type="checkbox" name="twentynine-to-thirtyfive" id="twentynine-to-thirtyfive">
+                                    <label for="twentynine-to-thirtyfive">29-35</label></li>
+                                <li><input type="checkbox" name="thirtyfive-to-fifty" id="thirtyfive-to-fifty">
+                                    <label for="thirtyfive-to-fifty">35-50</label></li>
+                                <li><input type="checkbox" name="fifty-to-sixtyfive" id="fifty-to-sixtyfive">
+                                    <label for="fifty-to-sixtyfive">50-65</label></li>
                             </ul>
                         </li>
 
                         <li>
                             <button type="submit" class="button" id="button" name="button">Submit</button>
-                            <button type="button" class="button" id="act_button" name="act_button" onclick="testfunction()">Activate</button>
+                            <button type="button" class="button" id="act_button" name="act_button" onclick="testFunction()">Activate</button>
                         </li>
                     </ul>
                 </form> 
@@ -74,14 +52,19 @@
                 fetch('/api')
                 .then((response) => response.text())
                 .then((response) => {
-                    const fruits = ['apple','mango','grape'];
+                    console.log(response);
+                    document.querySelector("body").style.backgroundColor = "#6a0dad";
+                    const fruits = ['pear','mango','grape'];
                     const checks = document.querySelectorAll('.flex-inner label')
                     console.log(checks.length, checks[0]);
                     checks.forEach(((check, i) => {
                         console.log(check,i);
                         check.innerText = fruits[i];
                     }))
-                }) 
+                    document.querySelector("h1").innerText = response;
+                    document.querySelector(".checkbox-list-label").innerText = "Fruits";
+                    document.querySelector(".flex-outer").style.margin = "0 auto";
+                }); 
             }
        </script>
     </body>
