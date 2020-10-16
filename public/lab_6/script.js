@@ -1,6 +1,6 @@
 // You may wish to find an effective randomizer function on MDN.
-function getRandomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * Math.floor(max) - Math.floor(min)) + Math.floor(min);
 }
 
 function range(int) {
@@ -31,9 +31,31 @@ document.body.addEventListener('submit', async (e) => {
     body: JSON.stringify(form)
   })
     .then((fromServer) => fromServer.json())
-    .then((fromServer) => {
+    .then((jsonfromServer) => {
       // You're going to do your lab work in here. Replace this comment.
-      console.log('fromServer', fromServer);
-    })
-    .catch((err) => console.log(err));
+      /* use math.random, range function and .map()
+       to get ten random countries from returned value list */
+      console.log('jsonfromServer', jsonfromServer);
+      const arr10 = range(10);
+      const arr = arr10.map(() => {
+        const number = getRandomInt(0, 243);
+        return fromServer[number];
+      });
+
+      const reverseList = arr.sort((a, b) => sortFunction(b, a, 'name'));
+      const ul = document.createElement('ul');
+      ul.className = 'flexd-inner';
+      $('form').prepend(ul);
+
+      reverseList.forEach((el, i) => {
+        // idk what goes here
+
+
+      });
+      return step2Data;
+    });
+
+    .catch((err) => {
+      console.log(err);
+    });
 });

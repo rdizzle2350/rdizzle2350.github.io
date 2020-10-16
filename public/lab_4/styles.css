@@ -1,121 +1,88 @@
-/*CSS*/
-
 body {
-  background: rgba(56, 149, 168,0.8);
-  font-family: Arial, Helvetica, sans-serif;
-  margin-right: auto;
-  line-height: 1.5;
-  font-size: 20px;
-  color: rgb(15, 14, 14);
-}
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-form li + li {
-  margin-top: 1em;
-}
-
-h1,
-h2,
-h3 {
-  line-height: 1.5;
-  margin: 0;
-  padding: 0;
-}
-
-.name {
-  text-overflow: ellipsis;
-  max-width: 200px;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  max-width: 640px;
-  min-height: 100%;
+  background: #3895a8;
 }
 
 .wrapper {
-  flex-direction: column;
   display: flex;
-  align-items: center;
+  flex-direction: column;
 }
 
-.content {
-  background: #fff;
-  border: 2px dotted rgb(221, 221, 221);
-  flex-grow: 2;
-  flex: 0 0 200px;
-  padding: 10px;
-  overflow-wrap: break-word;
+.container {
+  min-height: 100%;
 }
 
 .header {
-  background: rgba(56, 149, 168,0.8);
   color: #fff;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   margin: 0;
   margin-bottom: 5px;
-  padding: 8px 16px;
+  padding: 4px 8px;
   border-radius: 4px;
 }
 
-.button {
-  background-color: #ffc477;
-  border: 2px solid #ca8611;
-  border-radius: 11px;
-  display: inline-block;
-  cursor: pointer;
-  font-family: Verdana;
-  font-size: 14px;
-}
-
-.button:hover {
-  border: 1px solid rgb(49, 46, 216);
-  background-color: royalblue;
-}
-
-textarea {
-  display: block;
-  box-shadow: 5px 1px rgb(214, 210, 210);
-  letter-spacing: 1px;
-  padding: 5px;
-  border-radius: 5px;
-  width: 100%;
-}
-
-label {
-  display: block;
-  margin: 5px;
-}
-
-
-
+/* Enter YOUR lab styles after this line */
 .flex-outer li,
 .flex-inner {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  align-content: stretch;
-  
+}
+
+.flex-outer > li > label,
+.flex-outer li p {
+  flex: 1 0 125px;
+  max-width: 225px;
+  padding: 8px;
+}
+ 
+.flex-outer > li > label + *,
+.flex-inner {
+  flex: 1 0 225px;
+}
+
+.flex-outer button {
+  margin-left: 0px;
+  padding: 6px 12px;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  border-radius: 3px;
+}
+
+.flex-inner li {
+  width: 95px;
 }
 
 .flex-inner {
-  /*padding: 0 8px;*/
+  padding: 0 8px;
   justify-content: space-between;
-  align-items: baseline;
-  align-content: flex-start;
 }
 
+.flex-outer {
+  max-width:800px;
+  padding: 0 16px;
+}
 
+.button {
+  background-color: #ffc477;
+  border: 2px solid #ca8611;
+  border-radius: 3px;
+  padding: 6px 12px;
+  margin-right: 10px;
 
+  display: inline-block;
+  cursor: pointer;
+  font-family: Verdana;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
 
+.button:hover {
+  border: 1px solid rgb(69, 69, 69);
+  background-color: royalblue;
+}
