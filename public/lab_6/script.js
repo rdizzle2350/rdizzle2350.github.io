@@ -50,9 +50,10 @@ document.body.addEventListener('submit', async (e) => {
       reverseList.forEach((el, i) => {
         const li = document.createElement('li');
         $(li).append(`<input type="checkbox" value=${el.code} id=${el.code} />`);
-        $(li).append(`<label for=${el.code}> ${el.name} </label>`);
+        $(li).append(`<label for=${el.code}>${el.name}</label>`);
         $(ul).append(li);
       });
+      return reverseList;
     })
     .catch((err) => console.log(err));
 });
