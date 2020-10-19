@@ -48,14 +48,11 @@ document.body.addEventListener('submit', async (e) => {
       $('form').prepend(ul);
 
       reverseList.forEach((el, i) => {
-        // idk what goes here
-
-
+        const li =  document.createElement('li');
+        $(li).append(`<input type="checkbox" value=${el.code} id=${el.code} />`);
+        $(li).append(`<label for=${el.code}> ${el.name} </label>`);
+        $(ul).append(li);
       });
-      return step2Data;
-    });
-
-    .catch((err) => {
-      console.log(err);
-    });
+    })
+    .catch((err) => console.log(err));
 });
