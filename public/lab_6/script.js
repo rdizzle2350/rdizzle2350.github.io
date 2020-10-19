@@ -32,6 +32,9 @@ document.body.addEventListener('submit', async (e) => {
   })
     .then((fromServer) => fromServer.json())
     .then((fromServer) => {
+      if (document.querySelector('.flex-inner')) {
+        document.querySelector('.flex-inner').remove();
+      }
       // You're going to do your lab work in here. Replace this comment.
       /* use math.random, range function and .map()
        to get ten random countries from returned value list */
@@ -53,7 +56,6 @@ document.body.addEventListener('submit', async (e) => {
         $(li).append(`<label for=${el.code}>${el.name}</label>`);
         $(ul).append(li);
       });
-      return reverseList;
     })
     .catch((err) => console.log(err));
 });
