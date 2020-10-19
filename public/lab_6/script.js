@@ -31,11 +31,11 @@ document.body.addEventListener('submit', async (e) => {
     body: JSON.stringify(form)
   })
     .then((fromServer) => fromServer.json())
-    .then((jsonfromServer) => {
+    .then((fromServer) => {
       // You're going to do your lab work in here. Replace this comment.
       /* use math.random, range function and .map()
        to get ten random countries from returned value list */
-      console.log('jsonfromServer', jsonfromServer);
+      console.log('fromServer', fromServer);
       const arr10 = range(10);
       const arr = arr10.map(() => {
         const number = getRandomInt(0, 243);
