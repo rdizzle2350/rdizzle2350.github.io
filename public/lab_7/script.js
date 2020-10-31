@@ -14,7 +14,6 @@ function convertRestaurantsToCategories(restaurantList) {
     y: result[category],
     label: category
   }));
-  console.log('reply', reply);
   return reply;
 }
 
