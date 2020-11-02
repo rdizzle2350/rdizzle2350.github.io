@@ -4,15 +4,14 @@ function convertRestaurantsToCategories(restaurantList) {
   for (let i = 0; i < restaurantList.length; i += 1) {
     catArr.push(restaurantList[i].category);
   }
-  for (let i = 0; i < restaurantList.length; i += 1) {
+  for (let i = 0; i < catArr.length; i += 1) {
     if (!result[catArr[i]]) {
       result[catArr[i]] = 0;
     }
     result[catArr[i]] += 1;
   }
   const reply = Object.keys(result).map((category) => ({
-    y: result[category],
-    label: category
+    y: result[category], label: category
   }));
   return reply;
 }
@@ -21,14 +20,18 @@ function makeYourOptionsObject(datapointsFromRestaurantsList) {
   // set your chart configuration here!
   CanvasJS.addColorSet('customColorSet1', [
     // add an array of colors here https://canvasjs.com/docs/charts/chart-options/colorset/
-    '#00ffff', '#1e90ff', '#0000ff', '#9400d3', '#ff1493'
+    '#00FFFF',
+    '#1E90FF',
+    '#0000FF',
+    '#9400D3',
+    '#FF1493'
   ]);
 
   return {
     animationEnabled: true,
     colorSet: 'customColorSet1',
     title: {
-      text: 'Change This Title'
+      text: 'Places To Eat Out In Future'
     },
     axisX: {
       interval: 1,
@@ -37,9 +40,30 @@ function makeYourOptionsObject(datapointsFromRestaurantsList) {
     axisY2: {
       interlacedColor: 'rgba(1,77,101,.2)',
       gridColor: 'rgba(1,77,101,.1)',
-      title: 'Change This Title',
+      title: 'Sustenance Sources by Category',
       labelFontSize: 12,
-      scaleBreaks: {customBreaks: []} // Add your scale breaks here https://canvasjs.com/docs/charts/chart-options/axisy/scale-breaks/custom-breaks/
+      scaleBreaks: {
+        customBreaks: [
+          {
+            startValue: 40,
+            endValue: 50,
+            color: 'red',
+            type: 'zigzag'
+          },
+          {
+            startValue: 85,
+            endValue: 100,
+            color: 'red',
+            type: 'zigzag'
+          },
+          {
+            startValue: 140,
+            endValue: 175,
+            color: 'red',
+            type: 'zigzag'
+          }
+        ]
+      } // Add your scale breaks here https://canvasjs.com/docs/charts/chart-options/axisy/scale-breaks/custom-breaks/
     },
     data: [{
       type: 'bar',
